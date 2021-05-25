@@ -7,7 +7,6 @@ import { Box, Link, Drawer, Typography } from '@material-ui/core';
 import { PATH_PAGE } from '../../routes/paths';
 // components
 import Logo from '../../components/Logo';
-import MyAvatar from '../../components/MyAvatar';
 import Scrollbar from '../../components/Scrollbar';
 import NavSection from '../../components/NavSection';
 import { MHidden } from '../../components/@material-extend';
@@ -30,8 +29,8 @@ const AccountStyle = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   padding: theme.spacing(2, 2.5),
-  borderRadius: theme.shape.borderRadiusSm,
-  backgroundColor: theme.palette.grey[500_12]
+  // borderRadius: theme.shape.borderRadiusSm,
+  // backgroundColor: theme.palette.grey[500_12]
 }));
 
 const DocStyle = styled('div')(({ theme }) => ({
@@ -67,22 +66,17 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: Dash
         '& .simplebar-content': { height: '100%', display: 'flex', flexDirection: 'column' }
       }}
     >
-      <Box sx={{ px: 2.5, py: 3 }}>
-        <Box component={RouterLink} to="/" sx={{ display: 'inline-flex' }}>
-          <Logo />
-        </Box>
-      </Box>
-
       <Box sx={{ mb: 2, mx: 2.5 }}>
         <Link underline="none" component={RouterLink} to={PATH_PAGE.home}>
           <AccountStyle>
-            <MyAvatar />
+            <Box sx={{ px: 2.5, py: 3 }}>
+              <Box component={RouterLink} to="/" sx={{ display: 'inline-flex' }}>
+                <Logo />
+              </Box>
+            </Box>
             <Box sx={{ ml: 2 }}>
               <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
-                PHUWANART
-              </Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                ADMIN
+                SHIBA-PAL
               </Typography>
             </Box>
           </AccountStyle>
@@ -95,14 +89,14 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: Dash
 
       <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
         <DocStyle>
-          <DocIcon sx={{ width: 36, height: 36, mb: 2 }} />
-          <Typography gutterBottom variant="subtitle1" sx={{ color: 'grey.800' }}>
-            Farm NFTs with $meme
+          {/* <DocIcon sx={{ width: 36, height: 36, mb: 2 }} /> */}
+          <Typography gutterBottom variant="subtitle2" sx={{ color: 'grey.600' }}>
+            Farm NFTs with $shiba-pal
           </Typography>
           <Typography variant="body2" sx={{ mb: 2, color: 'grey.600' }}>
             Participate in Meme NFT
             <br /> farming by staking
-            <br /> $meme tokens.
+            <br /> $shiba-pal tokens.
           </Typography>
         </DocStyle>
       </Box>
