@@ -97,15 +97,13 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: Dash
         <DocStyle>
           <DocIcon sx={{ width: 36, height: 36, mb: 2 }} />
           <Typography gutterBottom variant="subtitle1" sx={{ color: 'grey.800' }}>
-            Hi, Mark
+            Farm NFTs with $meme
           </Typography>
           <Typography variant="body2" sx={{ mb: 2, color: 'grey.600' }}>
-            Need help?
-            <br /> Please check our docs
+            Participate in Meme NFT
+            <br /> farming by staking
+            <br /> $meme tokens.
           </Typography>
-          <Button fullWidth href="#" target="_blank" variant="contained">
-            Documentation
-          </Button>
         </DocStyle>
       </Box>
     </Scrollbar>

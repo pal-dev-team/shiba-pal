@@ -34,29 +34,10 @@ export type ProductReview = {
 };
 
 export type Product = {
-  id: string;
-  cover: string;
-  images: string[];
-  name: string;
-  price: number;
-  code: string;
-  sku: string;
-  tags: String[];
-  priceSale: number | null;
-  totalRating: number;
-  totalReview: number;
-  ratings: ProductRating[];
-  reviews: ProductReview[];
-  colors: string[];
-  status: ProductStatus;
-  inventoryType: ProductInventoryType;
-  sizes: string[];
-  available: number;
-  description: string;
-  sold: number;
-  createdAt: Date;
-  category: ProductCategory;
-  gender: ProductGender;
+  title: string;
+  image: string;
+  artist_name: string;
+  url: string;
 };
 
 export type CartItem = {
