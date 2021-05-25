@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 // material
 import { alpha, experimentalStyled as styled } from '@material-ui/core/styles';
-import { Box, Link, Button, Drawer, Typography } from '@material-ui/core';
+import { Box, Link, Drawer, Typography } from '@material-ui/core';
 // routes
 import { PATH_PAGE } from '../../routes/paths';
 // components

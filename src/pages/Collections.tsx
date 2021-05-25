@@ -2,7 +2,6 @@
 import { Container, Grid, CardHeader } from '@material-ui/core';
 // components
 import Page from '../components/Page';
-import AppFeatured from '../components/_dashboard/general-app/AppFeatured';
 import ShopProductList from '../components/shop/ShopProductList';
 
 const mock = [

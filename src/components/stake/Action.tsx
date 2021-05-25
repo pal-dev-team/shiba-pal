@@ -66,7 +66,7 @@ const Incrementer = ({ name, available }: { name: string; available: number }) =
 };
 
 export default function StakeAction() {
-    const isMaxQuantity = 2 >= 2;
+    const isMaxQuantity = true;
     const formik = useFormik({
         enableReinitialize: true,
         initialValues: {
