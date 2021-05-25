@@ -22,7 +22,7 @@ type ShopProductCardProps = {
 };
 
 export default function ShopProductCard({ product }: ShopProductCardProps) {
-  const { title, image, artist_name, url } = product;
+  const { title, image, artist_name } = product;
   return (
     <Card>
       <Box sx={{ pt: '100%', position: 'relative' }}>
