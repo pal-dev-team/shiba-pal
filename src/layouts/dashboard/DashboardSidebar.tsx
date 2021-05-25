@@ -12,10 +12,7 @@ import NavSection from '../../components/NavSection';
 import { MHidden } from '../../components/@material-extend';
 //
 import sidebarConfig from './SidebarConfig';
-import { DocIcon } from '../../assets';
-
 // ----------------------------------------------------------------------
-
 const DRAWER_WIDTH = 280;
 
 const RootStyle = styled('div')(({ theme }) => ({
@@ -89,7 +86,6 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: Dash
 
       <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
         <DocStyle>
-          {/* <DocIcon sx={{ width: 36, height: 36, mb: 2 }} /> */}
           <Typography gutterBottom variant="subtitle2" sx={{ color: 'grey.600' }}>
             Farm NFTs with $shiba-pal
           </Typography>
