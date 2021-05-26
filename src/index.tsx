@@ -1,3 +1,5 @@
+import { Web3ReactProvider } from '@web3-react/core';
+import { Web3Provider } from '@ethersproject/providers';
 // mock api
 import './_apis_';
 
@@ -45,16 +47,25 @@ import reportWebVitals from './reportWebVitals';
 
 // ----------------------------------------------------------------------
 
+function getLibrary(provider: any): Web3Provider {
+  const library = new Web3Provider(provider)
+  library.pollingInterval = 12000
+  return library
+}
+
 ReactDOM.render(
-  <HelmetProvider>
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <SettingsProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </SettingsProvider>
-    </LocalizationProvider>
-  </HelmetProvider>,
+  <Web3ReactProvider getLibrary={getLibrary}>
+    <HelmetProvider>
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <SettingsProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </SettingsProvider>
+      </LocalizationProvider>
+    </HelmetProvider>
+  </Web3ReactProvider>
+  ,
   document.getElementById('root')
 );
 
