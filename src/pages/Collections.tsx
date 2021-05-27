@@ -1,3 +1,4 @@
+import { FC } from 'react';
 // material
 import { Container, Grid, CardHeader } from '@material-ui/core';
 // components
@@ -33,7 +34,7 @@ const mock = [
 
 // ----------------------------------------------------------------------
 
-export default function Collections() {
+const Collections: FC = () => {
     return (
         <Page title="Dashboard: App | Minimal-UI">
             <Container maxWidth="xl">
@@ -47,3 +48,5 @@ export default function Collections() {
         </Page>
     );
 }
+
+export default Collections

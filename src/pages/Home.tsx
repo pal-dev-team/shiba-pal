@@ -1,3 +1,4 @@
+import { FC } from 'react';
 // material
 import { Container, Grid, CardHeader } from '@material-ui/core';
 // components
@@ -33,8 +34,7 @@ const mock = [
 ]
 
 // ----------------------------------------------------------------------
-
-export default function GeneralApp() {
+const Home: FC = () => {
     return (
         <Page title="Dashboard: App | Minimal-UI">
             <Container maxWidth="xl">
@@ -52,3 +52,4 @@ export default function GeneralApp() {
         </Page>
     );
 }
+export default Home
