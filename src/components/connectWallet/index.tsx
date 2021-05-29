@@ -44,6 +44,7 @@ export const ConnectWallet: FC<Iprops> = ({ open, setOpen }) => {
 
     useEffect(() => {
         if (error) setErrorMessage({ message: getErrorMessage(error), type: 'warning' });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [error]);
 
     const triedEager = useEagerConnect();
