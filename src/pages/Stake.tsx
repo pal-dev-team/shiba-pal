@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Box, Card, Grid, Container } from '@material-ui/core';
 import { experimentalStyled as styled } from '@material-ui/core/styles';
 import StakeAction from '../components/stake/Action';
@@ -20,7 +20,7 @@ const ProductImgStyle = styled('img')(({ theme }) => ({
     position: 'absolute'
 }));
 
-function Stake() {
+const Stake: FC = () => {
     const { image, artist_name } = mock[0];
     return (
         <Container>
