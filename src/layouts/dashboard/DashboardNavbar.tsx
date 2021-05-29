@@ -1,12 +1,15 @@
+import { useState, useEffect } from 'react';
+import { useWeb3React } from '@web3-react/core';
+import { Web3Provider } from '@ethersproject/providers';
 import { Icon } from '@iconify/react';
 import menu2Fill from '@iconify/icons-eva/menu-2-fill';
 // material
 import { alpha, experimentalStyled as styled } from '@material-ui/core/styles';
-import { Box, AppBar, Toolbar, IconButton } from '@material-ui/core';
+import { Box, Stack, AppBar, Toolbar, IconButton, Button } from '@material-ui/core';
 // components
 import { MHidden } from '../../components/@material-extend';
-import Searchbar from './Searchbar';
-
+import { ConnectWallet } from '../../components/connectWallet';
+import { shortenAddress } from '../../lib/check-address';
 // ----------------------------------------------------------------------
 
 const DRAWER_WIDTH = 280;
@@ -38,6 +41,12 @@ type DashboardNavbarProps = {
 };
 
 export default function DashboardNavbar({ onOpenSidebar }: DashboardNavbarProps) {
+  const { account } = useWeb3React<Web3Provider>()
+  const [open, setOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (account) setOpen(false)
+  }, [account])
   return (
     <RootStyle>
       <ToolbarStyle>
@@ -46,10 +55,14 @@ export default function DashboardNavbar({ onOpenSidebar }: DashboardNavbarProps)
             <Icon icon={menu2Fill} />
           </IconButton>
         </MHidden>
-
-        <Searchbar />
         <Box sx={{ flexGrow: 1 }} />
+        <Stack>
+          <Button variant="contained" onClick={() => { !account && setOpen(true) }}>
+            {!account ? 'Connect Wallet' : shortenAddress(account)}
+          </Button>
+        </Stack>
       </ToolbarStyle>
+      <ConnectWallet open={open} setOpen={setOpen} />
     </RootStyle>
   );
 }
